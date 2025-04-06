@@ -178,6 +178,7 @@ def train(
     #     else:
     #         return result
     def preprocess_function(examples):
+        print(examples)
         inputs = tokenizer(
             examples["question"],
             examples["context"],
