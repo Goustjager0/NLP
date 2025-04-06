@@ -178,6 +178,9 @@ def train(
     #     else:
     #         return result
     def preprocess_function(examples):
+        if len(examples["answers"]["text"]) == 0 or len(examples["answers"]["answer_start"]) == 0:
+            print("missing data")
+            return {}
         # questions = [q.strip() for q in examples["question"]]
         inputs = tokenizer(
             examples["question"],
